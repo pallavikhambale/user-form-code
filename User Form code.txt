@@ -1,0 +1,62 @@
+##Age Number SpinButton Code:
+
+ Private Sub SpinButton1_Change()
+
+ TextBox2.Value = SpinButton1.Value
+
+ End Sub
+
+##Submit Button Code:
+
+ Private Sub CommandButton1_Click()
+
+ Sheet2.Activate
+
+ Range("a1").End(xlDown).Offset(1, 0).Value = Range("a1").End(xlDown).Value + 1
+
+ Range("b1").End(xlDown).Offset(1, 0).Value = TextBox1.Value
+ Range("c1").End(xlDown).Offset(1, 0).Value = TextBox2.Value
+ Range("d1").End(xlDown).Offset(1, 0).Value = ComboBox1.Value
+
+ If CheckBox1.Value = True Then
+
+ Range("e1").End(xlDown).Offset(1, 0).Value = "Yes"
+
+ Else
+
+ Range("e1").End(xlDown).Offset(1, 0).Value = "No"
+
+ Unload Me
+
+ End Sub
+
+##Reset Button Code:
+
+ Private Sub CommandButton2_Click()
+
+ TextBox1.Value = ""
+ TextBox2.Value = ""
+ ComboBox1.Value = ""
+ CheckBox1.Value = ""
+
+ End Sub
+
+##Cancel Button Code:
+
+ Private Sub CommandButton3_Click()
+
+ Unload Me
+
+ End Sub
+
+##Button of Sheet to Open Form
+ -To Add button, Activate design mode and add button
+ -Double click on button
+ -now type following code
+ 
+ Private Sub CommandButton1_Click()
+
+ UserForm1.Show
+
+ End Sub
+
